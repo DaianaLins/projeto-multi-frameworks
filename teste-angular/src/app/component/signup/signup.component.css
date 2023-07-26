@@ -1,0 +1,45 @@
+
+.body {
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  height: 100vh;
+}
+.container{
+  display: flex;
+  flex-direction: column;
+  margin-top: 42px;
+}
+
+h1{
+  font-family: 'Roboto' ;
+  font-size: 20px;
+  color: #04183E;
+}
+
+input{
+  background: #FFFFFF;
+  border: 1px solid #E4EBFB;
+  border-radius: 4px;
+  height: 45px;
+  width: 300px;
+  padding-left: 10px;
+  margin-bottom: 15px;
+  outline-color: #66AFFF;
+}
+
+a{
+  color: #04183E;
+}
+
+button{
+  background: #8B0000;
+  height: 45px;
+  width: 300px;
+  border: none;
+  color: #FFFFFF;
+  font-family: 'Roboto';
+  font-size: 14px;
+  border-radius: 4px;
+  cursor: pointer;
+}

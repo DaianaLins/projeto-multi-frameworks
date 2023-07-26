@@ -1,0 +1,27 @@
+<div class="login">
+  <div [ngClass]="body">
+    <form>
+      <h1>Olá, faça o seu cadastro</h1>
+      <div *ngIf="showErr"  [ngStyle]="{'paddingTop': '20px' }" >
+        <p [ngStyle]="{'color': 'red' }" >É necessário preencher todos os campos*</p>
+      </div>
+      <div *ngIf="showErrAut"  [ngStyle]="{'paddingTop': '20px' }" >
+        <p [ngStyle]="{'color': 'red' }" >Usuário ou senha incorretos</p>
+      </div>
+      <div [ngClass]="container" >
+        <label for="nome" [ngClass]="nome"  >Nome</label>
+        <input type="email" required   [ngClass]="emailInput"  [(ngModel)]="nome" name="nome"  placeholder="Nome">
+        <label for="email_l" [ngClass]="email"  >Email</label>
+        <input type="email" required   [ngClass]="emailInput"  [(ngModel)]="email_l" name="email_l"  placeholder="Email">
+        <label for="password" >Senha</label>
+        <input type="password"  [(ngModel)]="password" name="password" placeholder="Senha">
+        <div [ngStyle]="{'paddingBottom': '15px' }">
+          <a href="/">Login</a>
+        </div>
+        <button type="submit" (click)="signup()">
+          Entrar
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
