@@ -1,4 +1,23 @@
 <div class="login">
   <div [ngClass]="body">
+    <section [ngClass]="header">
+      <h1>Daiana Blog</h1>
+      <button type="submit" (click)="logout()">
+        Sair
+      </button>
+    </section>
+      <div [ngClass]="content">
+        <section  *ngFor="let posts of listPost">
+          <div [ngClass]="container">
+            <h1>{{posts.title}}</h1>
+            <p><span>{{posts.author}}</span> - <span>{{posts.date | date:"dd/MM/yyyy HH:mm"}}</span></p>
+
+            <p>
+              {{posts.description}}
+            </p>
+          </div>
+
+        </section>
+      </div>
   </div>
 </div>

@@ -10,6 +10,7 @@ import { LoginComponent } from './auth/login/login.component';
 import { SignupComponent } from './component/signup/signup.component';
 import { AuthService } from './auth/auth.service';
 import { PermissionsService } from './user-autenticado.guard';
+import { BlogService } from './services/blog.service';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,7 @@ import { PermissionsService } from './user-autenticado.guard';
     HttpClientModule,
     ReactiveFormsModule
   ],
-  providers: [AuthService, PermissionsService],
+  providers: [AuthService, PermissionsService, BlogService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,12 +1,40 @@
 
 .body {
-  justify-content: center;
-  display: flex;
-  align-items: center;
-  height: 100vh;
+  height: auto;
 }
+.content{
+  padding: 3rem;
+}
+
 .container{
   display: flex;
   flex-direction: column;
+  border: 2px solid #FFF;
+  border-radius: 14px;
+  background: #FFF;
   margin-top: 42px;
+  padding: 2rem;
+}
+
+.header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+}
+
+p{
+  padding: 1rem;
+}
+
+button{
+  background: #8B0000;
+  height: 45px;
+  width: 100px;
+  border: none;
+  color: #FFFFFF;
+  font-family: 'Roboto';
+  font-size: 14px;
+  border-radius: 4px;
+  cursor: pointer;
 }
