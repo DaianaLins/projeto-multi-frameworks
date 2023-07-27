@@ -34,11 +34,13 @@ export class LoginComponent {
   logar() {
     this.message = 'Trying to log in ...';
     var usuario = {'email': this.email_l, 'password': this.password} as IUsuario;
-    this.authService.login(usuario).subscribe(() => {
+    this.authService.login(usuario).subscribe((res) => {
       this.message = this.getMessage();
       if (this.authService.isLoggedIn === true) {
         const redirectUrl = 'home';
         this.router.navigate([redirectUrl]);
+      } else{
+        alert(res['msg'].valueOf())
       }
     });
   }

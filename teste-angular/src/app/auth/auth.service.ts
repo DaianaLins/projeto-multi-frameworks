@@ -23,7 +23,7 @@ export class AuthService {
   // store the URL so we can redirect after logging in
   redirectUrl: string | null = null;
 
-  login(usuario: IUsuario): Observable<boolean> {
+  login(usuario: IUsuario): Observable<any> {
     const res = this.httpClient.post<any>(this.apiUrl + "/login", usuario).pipe(
       tap((resposta) => {
         console.log(resposta, resposta['user'])
