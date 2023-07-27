@@ -29,7 +29,15 @@ export class BlogService {
         title
         description
         author
-        date
+        date,
+        imageAuthor {
+          id,
+          url
+        },
+        image {
+          id,
+          url
+        }
       }
     }`;
     const res = this.httpClient.post<any>(this.apiUrl, JSON.stringify({ query: this.query })).pipe(

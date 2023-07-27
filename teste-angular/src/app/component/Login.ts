@@ -8,7 +8,15 @@ export interface IBlogs{
   title: string;
   author: string;
   date: string;
-  description: string
+  description: string;
+  imageAuthor : {
+    id: string,
+    url: string
+  };
+  image : {
+    id: string,
+    url: string
+  }
 }
 export interface IDesign{
   key: string;

@@ -13,14 +13,21 @@ export class HomeComponent {
   body = "body";
   header = "header";
   container = "container";
+  contentAut = "contentAut"
+  artigo = "artigo";
   content = "content";
   listPost: IBlogs[] = [];
 
   constructor(public blogService: BlogService, public router: Router, public authService: AuthService) {
     this.blog();
+    this.getUser();
   }
   blog(): void{
     this.blogService.getBlogs().subscribe((res) => (this.listPost = res['data']['blogs']))
+  }
+
+  getUser(): void{
+    console.log(this.authService.getUser())
   }
 
   logout() {

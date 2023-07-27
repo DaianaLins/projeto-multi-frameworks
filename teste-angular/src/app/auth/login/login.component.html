@@ -1,10 +1,10 @@
 <div class="login">
   <div [ngClass]="body">
-    <form>
+    <h1>Olá, faça login em sua conta</h1>
+    <form [ngClass]="form">
       <!-- <div [ngStyle]="{'paddingBottom': 40 + 'px', 'justifyContent': 'center', 'display': 'flex' }">
         <img src="../../../assets/dai.jfif" [ngStyle]="{'width': '200px' }" />
       </div> -->
-      <h1>Olá, faça login em sua conta</h1>
       <div *ngIf="showErr"  [ngStyle]="{'paddingTop': '20px' }" >
         <p [ngStyle]="{'color': 'red' }" >É necessário preencher todos os campos*</p>
       </div>

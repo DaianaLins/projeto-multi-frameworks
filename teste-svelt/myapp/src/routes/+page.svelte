@@ -32,10 +32,10 @@
 	<meta name="description" content="Svelte demo app" />
 </svelte:head>
 
-<div class="login">
-	<div class="body">
-	  <form>
-		<h1>Olá, faça o seu cadastro</h1>
+<div class="body">
+	<div class="content">
+		<h1>Formulário de cadastro</h1>
+		<form class="form">
 		<div class="container" >
 		  <label for="nome" class="nome"  >Nome</label>
 		  <input type="text" required bind:value={name}   class="emailInput"  placeholder="Nome">
@@ -59,11 +59,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
 .body {
-  justify-content: center;
+	height: 100vh;
+  flex-direction: column;
   display: flex;
+  justify-content: center;
   align-items: center;
-  height: 100vh;
   background-color: #EFF2F9;
+}
+.content{  
+  background-color: #EFF2F9;
+}
+.form{
+  display: flex;
+  flex-direction: column;
+  border: 2px solid #FFF;
+  border-radius: 14px;
+  background: #FFF;
+  margin-top: 42px;
+  padding: 2rem;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
 }
 .container{
   display: flex;
@@ -79,11 +93,13 @@ h1{
   font-family: 'Roboto' ;
   font-size: 20px;
   color: #04183E;
+  justify-content: center;
+  display: flex;
 }
 
 input{
   background: #FFFFFF;
-  border: 1px solid #E4EBFB;
+  border: 1px solid #bfbcbc;
   border-radius: 4px;
   height: 45px;
   width: 300px;

@@ -11,6 +11,7 @@ import { IUsuario } from 'src/app/component/Login';
 export class LoginComponent {
   body = "body";
   container = "container";
+  form = "form";
   email = "email";
   emailInput = "emailInput";
   email_l: string = '';

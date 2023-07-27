@@ -26,7 +26,7 @@ export class AuthService {
   login(usuario: IUsuario): Observable<boolean> {
     const res = this.httpClient.post<any>(this.apiUrl + "/login", usuario).pipe(
       tap((resposta) => {
-        console.log(resposta, resposta['status'])
+        console.log(resposta, resposta['user'])
         if(!resposta['status']){
           this.isLoggedIn = false;
         } else {
@@ -37,6 +37,11 @@ export class AuthService {
       }))
 
       return res
+  }
+
+
+  getUser(): string | null{
+    return localStorage.getItem('usuario');
   }
 
   logout(): void {

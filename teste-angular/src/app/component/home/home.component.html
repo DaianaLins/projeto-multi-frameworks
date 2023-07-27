@@ -1,7 +1,7 @@
 <div class="login">
   <div [ngClass]="body">
     <section [ngClass]="header">
-      <h1>Daiana Blog</h1>
+      <h2>Dloguinho</h2>
       <button type="submit" (click)="logout()">
         Sair
       </button>
@@ -9,14 +9,21 @@
       <div [ngClass]="content">
         <section  *ngFor="let posts of listPost">
           <div [ngClass]="container">
+            <div [ngClass]="contentAut">
+              <div [ngStyle]="{'paddingRight':'0.5rem' }" >
+                <img src={{posts.imageAuthor?.url}} [ngStyle]="{'width': '2.5rem', 'borderRadius': '20px' }" />
+              </div>
+              <p><span>{{posts.author}}</span></p>
+            </div>
             <h1>{{posts.title}}</h1>
-            <p><span>{{posts.author}}</span> - <span>{{posts.date | date:"dd/MM/yyyy HH:mm"}}</span></p>
-
-            <p>
-              {{posts.description}}
-            </p>
+            <div [ngClass]="artigo" >
+              <p>
+                {{posts.description}}
+              </p>
+              <img src={{posts.image?.url}} [ngStyle]="{'width': '100%', 'marginTop': '4rem',  'borderRadius': '10px' }" />
+            </div>
+            <p [ngStyle]="{'paddingLeft': '2rem' }" ><span>{{posts.date | date:"HH:mm · dd/MM/yyyy" }}</span></p>
           </div>
-
         </section>
       </div>
   </div>
