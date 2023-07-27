@@ -21,10 +21,11 @@ export class BlogService {
   });
 
 
-  getBlogs(): Observable<any> {
-    this.query = `
-    query {
-      blogs {
+  getBlogs(search?: string): Observable<any> {
+    if (!!search) {
+      this.query = `
+      query {
+      blogs (orderBy: createdAt_DESC, where: {_search: "${search}"}) {
         id
         title
         description
@@ -40,6 +41,26 @@ export class BlogService {
         }
       }
     }`;
+    } else {
+      this.query = `
+      query {
+        blogs (orderBy: createdAt_DESC) {
+          id
+          title
+          description
+          author
+          date,
+          imageAuthor {
+            id,
+            url
+          },
+          image {
+            id,
+            url
+          }
+        }
+      }`;
+    }
     const res = this.httpClient.post<any>(this.apiUrl, JSON.stringify({ query: this.query })).pipe(
       tap((resposta) => {
         return this.blogs = resposta['data']['blogs']

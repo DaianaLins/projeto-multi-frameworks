@@ -1,19 +1,26 @@
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+
 <div class="home">
   <div [ngClass]="body">
     <section [ngClass]="header">
-      <a href="https://github.com/DaianaLins">
-        <h2>Dloguinho</h2>
-      </a>
-      <button type="submit" (click)="logout()">
-        Sair
-      </button>
+      <div [ngClass]="sectionH">
+        <a href="https://github.com/DaianaLins">
+          <h2>Dloguinho</h2>
+        </a>
+            <i (click)="logout()" class="fa fa-sign-out" aria-hidden="true"></i>
+      </div>
+        <div [ngClass]="searchH" >
+          <input type="text" required  [(ngModel)]="search" name="search"  placeholder="Pesquisar ">
+            <i (click)="searchBlogs()" class="fa fa-search"></i>
+        </div>
     </section>
       <div [ngClass]="content">
-        <section  *ngFor="let posts of listPost">
+        <section  *ngFor="let posts of listPost" >
           <div [ngClass]="container">
             <div [ngClass]="contentAut">
               <div [ngStyle]="{'paddingRight':'0.5rem' }" >
-                <img (click)="openImage(posts.imageAuthor?.url)" src={{posts.imageAuthor?.url}} [ngStyle]="{'width': '2.5rem', 'borderRadius': '20px', 'cursor': 'pointer' }" />
+                <img (click)="openImage(posts.imageAuthor?.url)" src={{posts.imageAuthor?.url}} [ngClass]="imgAuthor" />
               </div>
               <p><span>{{posts.author}}</span></p>
             </div>
@@ -22,11 +29,16 @@
               <p>
                 {{posts.description}}
               </p>
-              <img (click)="openImage(posts.image?.url)" src={{posts.image?.url}} [ngStyle]="{'width': '100%', 'marginTop': '2.5rem',  'borderRadius': '10px', 'cursor': 'pointer' }" />
+              <img (click)="openImage(posts.image?.url)" src={{posts.image?.url}} [ngClass]="img" />
             </div>
             <p [ngStyle]="{'paddingLeft': '2rem' }" ><span>{{posts.date | date:"HH:mm · dd/MM/yyyy" }}</span></p>
           </div>
         </section>
+        <div *ngIf="listPost.length === 0">
+          <h1 [ngStyle]="{'color': '#fff' }" >
+            Você pesquisou por "{{search}}", infelizmente não encontramos resultados para busca.
+          </h1>
+       </div>
       </div>
   </div>
 </div>
