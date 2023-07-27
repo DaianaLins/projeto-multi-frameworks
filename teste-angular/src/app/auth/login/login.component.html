@@ -1,28 +1,36 @@
 <div class="login">
   <div [ngClass]="body">
-    <h1>Olá, faça login em sua conta</h1>
-    <form [ngClass]="form">
-      <!-- <div [ngStyle]="{'paddingBottom': 40 + 'px', 'justifyContent': 'center', 'display': 'flex' }">
-        <img src="../../../assets/dai.jfif" [ngStyle]="{'width': '200px' }" />
-      </div> -->
-      <div *ngIf="showErr"  [ngStyle]="{'paddingTop': '20px' }" >
-        <p [ngStyle]="{'color': 'red' }" >É necessário preencher todos os campos*</p>
-      </div>
-      <div *ngIf="showErrAut"  [ngStyle]="{'paddingTop': '20px' }" >
-        <p [ngStyle]="{'color': 'red' }" >Usuário ou senha incorretos</p>
-      </div>
-      <div [ngClass]="container" >
-        <label for="email_l" [ngClass]="email"  >Email</label>
-        <input type="email" required   [ngClass]="emailInput"  [(ngModel)]="email_l" name="email_l"  placeholder="Email">
-        <label for="password" >Senha</label>
-        <input type="password"  [(ngModel)]="password" name="password" placeholder="Senha">
-        <div [ngStyle]="{'paddingBottom': '15px' }">
-          <a href="http://127.0.0.1:5173/">Cadastre-se</a>
+    <div [ngClass]="form">
+      <h1>Olá, faça login em sua conta</h1>
+      <form [ngClass]="form2" >
+        <!-- <div [ngStyle]="{'paddingBottom': 40 + 'px', 'justifyContent': 'center', 'display': 'flex' }">
+          <img src="../../../assets/dai.jfif" [ngStyle]="{'width': '200px' }" />
+        </div> -->
+        <div *ngIf="showErr"  [ngStyle]="{'paddingTop': '20px' }" >
+          <p [ngStyle]="{'color': 'red' }" >É necessário preencher todos os campos*</p>
         </div>
-        <button type="submit" (click)="logar()">
-          Entrar
-        </button>
-      </div>
-    </form>
+        <div *ngIf="showErrAut"  [ngStyle]="{'paddingTop': '20px' }" >
+          <p [ngStyle]="{'color': 'red' }" >Usuário ou senha incorretos</p>
+        </div>
+        <div [ngClass]="container" >
+          <label for="email_l" [ngClass]="email"  >Email</label>
+          <input type="email" required   [ngClass]="emailInput"  [(ngModel)]="email_l" name="email_l"  placeholder="Email">
+          <label for="password" >Senha</label>
+          <input type="password"  [(ngModel)]="password" name="password" placeholder="Senha">
+          <div [ngStyle]="{'paddingBottom': '15px' }">
+            <a href="http://127.0.0.1:5173/">Cadastre-se</a>
+          </div>
+          <button type="submit" (click)="logar()">
+            Entrar
+          </button>
+        </div>
+      </form>
+    </div>
+    <div class="home" [ngClass]="body" [ngStyle]="{'width': '100%' }">
+       <div [ngStyle]="{'paddingBottom': 40 + 'px', 'justifyContent': 'center', 'display': 'flex' }">
+          <img src="../../../assets/panda.gif" [ngStyle]="{'width': '25rem' }" />
+        </div>
+    </div>
+
   </div>
 </div>

@@ -3,9 +3,7 @@
   height: auto;
 }
 .content{
-  padding-left: 25rem;
-  padding-right: 25rem;
-  padding-bottom: 25rem;
+  padding: 0 15rem 25rem 15rem;
 }
 
 .container{
@@ -20,7 +18,7 @@
 }
 .artigo{
   display: flex;
-  padding: 2rem;
+  padding: 1rem 2rem 1.5rem 2rem;
   align-items: center;
   flex-direction: column;
 }
@@ -28,23 +26,36 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.2rem;
-  border: 2px solid transparent;
-  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  width: auto;
+  border-bottom: 2px solid  rgba(0, 0, 0, 0.2);
+  /* box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2); */
 }
 
 h1{
-  padding: 0.5rem;
-  padding-left: 2rem;
+  padding: 1.2rem 2rem 2rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
 }
 
 h2{
-  color: gray;
+  color: #FFF;
+  border: 2px solid  #FFF;
+  padding: 0.5rem;
+  border-radius: 14px;
+}
+
+span{
+  font-size: 14px;
+  font-bold: 500;
 }
 
 p{
   /* padding: 1rem; */
   text-align: justify;
+  font-size: 16px;
 }
 
 button{

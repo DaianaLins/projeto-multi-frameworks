@@ -12,6 +12,7 @@ export class LoginComponent {
   body = "body";
   container = "container";
   form = "form";
+  form2 = "form2";
   email = "email";
   emailInput = "emailInput";
   email_l: string = '';

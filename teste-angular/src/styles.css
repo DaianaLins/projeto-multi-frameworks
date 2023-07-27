@@ -23,5 +23,9 @@ body {
   margin-bottom: 1em;
 }
 .login{
-  background: #EFF2F9;
+  background: #FFF;
+}
+.home{
+  background-image: url("./assets/back.jpg");
+  background-size: cover;
 }

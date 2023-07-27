@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { BlogService } from 'src/app/services/blog.service';
-import { IBlogs } from '../Login';
+import { IBlogs, IUsuario } from '../Login';
 import { AuthService } from 'src/app/auth/auth.service';
 
 @Component({
@@ -17,6 +17,7 @@ export class HomeComponent {
   artigo = "artigo";
   content = "content";
   listPost: IBlogs[] = [];
+  user: string | IUsuario | null | never[] = [];
 
   constructor(public blogService: BlogService, public router: Router, public authService: AuthService) {
     this.blog();
@@ -27,7 +28,12 @@ export class HomeComponent {
   }
 
   getUser(): void{
+    this.user = this.authService.getUser() as string | IUsuario | null
     console.log(this.authService.getUser())
+  }
+
+  openImage(url?: string): void{
+    window.open(url);
   }
 
   logout() {

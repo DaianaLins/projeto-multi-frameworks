@@ -9,17 +9,22 @@
 .form{
   display: flex;
   flex-direction: column;
-  border: 2px solid #FFF;
+  padding: 2rem 0 0 10rem;
+  width: 100%;
+}
+.form2{
   border-radius: 14px;
   background: #FFF;
-  margin-top: 42px;
-  padding: 2rem;
-  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-self: start;
 }
 .container{
   display: flex;
   flex-direction: column;
-  margin-top: 42px;
+  justify-content: center;
+  align-self: center;
+  padding: 2rem 0 0 0;
+
 }
 
 h1{
@@ -30,10 +35,10 @@ h1{
 
 input{
   background: #FFFFFF;
-  border: 1px solid #E2EBFB;
+  border: 1px solid #bfbcbc;
   border-radius: 4px;
   height: 45px;
-  width: 300px;
+  width: 350px;
   padding-left: 10px;
   margin-bottom: 15px;
   outline-color: #66AFFF;
@@ -46,11 +51,15 @@ a{
 button{
   background: #8B0000;
   height: 45px;
-  width: 300px;
+  width: 350px;
   border: none;
   color: #FFFFFF;
   font-family: 'Roboto';
   font-size: 14px;
   border-radius: 4px;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
 }

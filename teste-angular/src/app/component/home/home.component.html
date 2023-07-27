@@ -1,7 +1,9 @@
-<div class="login">
+<div class="home">
   <div [ngClass]="body">
     <section [ngClass]="header">
-      <h2>Dloguinho</h2>
+      <a href="https://github.com/DaianaLins">
+        <h2>Dloguinho</h2>
+      </a>
       <button type="submit" (click)="logout()">
         Sair
       </button>
@@ -11,7 +13,7 @@
           <div [ngClass]="container">
             <div [ngClass]="contentAut">
               <div [ngStyle]="{'paddingRight':'0.5rem' }" >
-                <img src={{posts.imageAuthor?.url}} [ngStyle]="{'width': '2.5rem', 'borderRadius': '20px' }" />
+                <img (click)="openImage(posts.imageAuthor?.url)" src={{posts.imageAuthor?.url}} [ngStyle]="{'width': '2.5rem', 'borderRadius': '20px', 'cursor': 'pointer' }" />
               </div>
               <p><span>{{posts.author}}</span></p>
             </div>
@@ -20,7 +22,7 @@
               <p>
                 {{posts.description}}
               </p>
-              <img src={{posts.image?.url}} [ngStyle]="{'width': '100%', 'marginTop': '4rem',  'borderRadius': '10px' }" />
+              <img (click)="openImage(posts.image?.url)" src={{posts.image?.url}} [ngStyle]="{'width': '100%', 'marginTop': '2.5rem',  'borderRadius': '10px', 'cursor': 'pointer' }" />
             </div>
             <p [ngStyle]="{'paddingLeft': '2rem' }" ><span>{{posts.date | date:"HH:mm · dd/MM/yyyy" }}</span></p>
           </div>

@@ -40,7 +40,7 @@ export class AuthService {
   }
 
 
-  getUser(): string | null{
+  getUser(): string | IUsuario | null{
     return localStorage.getItem('usuario');
   }
 
