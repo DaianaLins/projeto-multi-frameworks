@@ -4,7 +4,7 @@ import { Data, Router } from '@angular/router';
 
 import { Observable, of } from 'rxjs';
 import { tap, delay } from 'rxjs/operators';
-import { IUsuario } from '../component/Login';
+import { IUserReturn, IUsuario } from '../component/Login';
 
 @Injectable({
   providedIn: 'root',
@@ -23,10 +23,9 @@ export class AuthService {
   // store the URL so we can redirect after logging in
   redirectUrl: string | null = null;
 
-  login(usuario: IUsuario): Observable<Data> {
-    const res = this.httpClient.post<Data>(this.apiUrl + "/login", usuario).pipe(
+  login(usuario: IUsuario): Observable<IUserReturn> {
+    const res = this.httpClient.post<IUserReturn>(this.apiUrl + "/login", usuario).pipe(
       tap((resposta) => {
-        console.log(resposta, resposta['user'])
         if(!resposta['status']){
           this.isLoggedIn = false;
         } else {

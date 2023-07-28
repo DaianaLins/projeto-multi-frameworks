@@ -40,6 +40,14 @@
             Você pesquisou por "{{search}}", infelizmente não encontramos resultados para busca.
           </h1>
        </div>
+       <div *ngIf="loading">
+        <div [ngStyle]="{'justifyContent': 'center', 'alignItems': 'center', 'display': 'flex', 'flexDirection': 'column' }">
+          <img src="../../../assets/panda.gif" [ngStyle]="{'width': '25rem' }" />
+          <h1 [ngStyle]="{'color': '#fff' }" >
+            Carregando...
+          </h1>
+        </div>
+      </div>
       </div>
   </div>
 </div>

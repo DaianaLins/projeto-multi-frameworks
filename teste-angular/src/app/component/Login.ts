@@ -1,31 +1,25 @@
-export interface IUsuario{
+export interface IUsuario {
   email: string;
   password: string
 }
 
-export interface IBlogs{
-  id: string,
-  title: string;
-  author: string;
-  date: string;
-  description : {
-    html: string
-  },
-  url: string;
-  urlArtigo: string;
-  imageAuthor : {
-    id: string,
-    url: string
-  };
-  image : {
-    id: string,
-    url: string
+export interface IUserReturn {
+  msg: string;
+  status: boolean;
+  user: {
+    username: string;
+    email: string;
+    password: string;
+    isAvatarImageSet: boolean;
+    avatarImage: string;
   }
 }
-export interface IDesign{
+
+
+export interface IDesign {
   key: string;
   value: string
 }
-export interface IHeader{
+export interface IHeader {
   show?: boolean
 }

@@ -40,7 +40,7 @@ export class LoginComponent {
         const redirectUrl = 'home';
         this.router.navigate([redirectUrl]);
       } else{
-        alert(res['msg'].valueOf())
+        alert(res['msg']?.valueOf())
       }
     });
   }

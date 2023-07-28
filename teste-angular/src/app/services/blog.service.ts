@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Data, Router } from '@angular/router';
-import { IBlogs } from '../component/Login';
+import { IBlogReturn, IBlogs } from '../component/Blog';
 import { Observable, of, tap } from 'rxjs';
 
 
@@ -12,6 +12,7 @@ export class BlogService {
   private apiUrl = 'https://sa-east-1.cdn.hygraph.com/content/clkjrhprf18qq01uqbpj72nl6/master'
   private query: string = '';
   public blogs: IBlogs[] = []
+  public loading: boolean = false;
   constructor(private httpClient: HttpClient, private router: Router) { }
 
 
@@ -21,7 +22,7 @@ export class BlogService {
   });
 
 
-  getBlogs(search?: string): Observable<Data> {
+  getBlogs(search?: string): Observable<IBlogReturn> {
     if (!!search) {
       this.query = `
       query {
@@ -69,10 +70,12 @@ export class BlogService {
         }
       }`;
     }
-    const res = this.httpClient.post<Data>(this.apiUrl, JSON.stringify({ query: this.query })).pipe(
+    this.loading = true
+    const res = this.httpClient.post<IBlogReturn>(this.apiUrl, JSON.stringify({ query: this.query })).pipe(
       tap((resposta) => {
-        return this.blogs = resposta['data']['blogs']
+        return this.blogs = resposta.data.blogs
       }))
+      this.loading = false
     return res
   }
 
