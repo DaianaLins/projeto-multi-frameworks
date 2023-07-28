@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Router } from '@angular/router';
+import { Data, Router } from '@angular/router';
 
 import { Observable, of } from 'rxjs';
 import { tap, delay } from 'rxjs/operators';
@@ -23,8 +23,8 @@ export class AuthService {
   // store the URL so we can redirect after logging in
   redirectUrl: string | null = null;
 
-  login(usuario: IUsuario): Observable<any> {
-    const res = this.httpClient.post<any>(this.apiUrl + "/login", usuario).pipe(
+  login(usuario: IUsuario): Observable<Data> {
+    const res = this.httpClient.post<Data>(this.apiUrl + "/login", usuario).pipe(
       tap((resposta) => {
         console.log(resposta, resposta['user'])
         if(!resposta['status']){

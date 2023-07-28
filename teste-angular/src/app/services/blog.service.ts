@@ -21,7 +21,7 @@ export class BlogService {
   });
 
 
-  getBlogs(search?: string): Observable<any> {
+  getBlogs(search?: string): Observable<Data> {
     if (!!search) {
       this.query = `
       query {
