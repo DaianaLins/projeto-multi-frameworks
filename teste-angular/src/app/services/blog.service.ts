@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Router } from '@angular/router';
+import { Data, Router } from '@angular/router';
 import { IBlogs } from '../component/Login';
 import { Observable, of, tap } from 'rxjs';
 
@@ -28,7 +28,11 @@ export class BlogService {
       blogs (orderBy: createdAt_DESC, where: {_search: "${search}"}) {
         id
         title
-        description
+        description {
+          html
+        }
+        url
+        urlArtigo
         author
         date,
         imageAuthor {
@@ -47,7 +51,11 @@ export class BlogService {
         blogs (orderBy: createdAt_DESC) {
           id
           title
-          description
+          description {
+            html
+          }
+          url
+          urlArtigo
           author
           date,
           imageAuthor {
@@ -61,7 +69,7 @@ export class BlogService {
         }
       }`;
     }
-    const res = this.httpClient.post<any>(this.apiUrl, JSON.stringify({ query: this.query })).pipe(
+    const res = this.httpClient.post<Data>(this.apiUrl, JSON.stringify({ query: this.query })).pipe(
       tap((resposta) => {
         return this.blogs = resposta['data']['blogs']
       }))

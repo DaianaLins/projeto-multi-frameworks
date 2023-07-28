@@ -8,7 +8,11 @@ export interface IBlogs{
   title: string;
   author: string;
   date: string;
-  description: string;
+  description : {
+    html: string
+  },
+  url: string;
+  urlArtigo: string;
   imageAuthor : {
     id: string,
     url: string
